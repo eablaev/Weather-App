@@ -1,0 +1,138 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+:root{
+    --margin: 1rem;
+    --animation-timing: 2000ms ease-in-out;
+}
+
+.contentContainer {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set the body height to fill the viewport */
+        
+}
+
+.backgroundImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+   
+}
+
+.form{
+    position: absolute;
+    left: 90%;
+    top:0%;
+    transform: translate(-50%,50%);
+}
+
+.contentContainer,
+.form,
+.weatherContainer {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+.form { 
+   
+   
+    width: max-content;
+    gap: .3rem;
+
+}
+
+
+
+
+
+
+.temperature {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    
+}
+
+
+input {
+    border: none;
+    border-radius: 4px;
+    outline:none;
+    opacity: 20%;
+    width: 10rem;
+    padding: .3rem;
+    font-size: 1.3rem;
+    background-color: rgba(255, 255, 255, 1); /* Set the background color with opacity */
+    color: rgba(0, 0, 0, .7);
+
+   
+   
+}
+
+button {
+    display:none
+}
+
+
+
+.infoBody{
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+   
+    justify-items: center;
+    width: 100%;
+
+    
+  
+
+}
+
+.weatherIcon {
+   
+    grid-area: 1 / 1 / 23/ 2; 
+    width: 9.7rem;
+    justify-self: start;
+    align-self:start;
+   
+}
+
+.temperature{
+    font-size: 2.4rem;
+}
+
+.additionalData{
+   grid-column: 2/3 ;
+   align-self: end;
+  
+}
+
+.weatherContainer {
+    opacity: 0;
+    
+    
+}
+
+.weatherContainer.active {
+    opacity: 1;
+    transition: opacity var(--animation-timing);
+}
